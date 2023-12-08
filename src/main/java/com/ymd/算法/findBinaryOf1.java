@@ -15,5 +15,26 @@ public class findBinaryOf1 {
         }
         System.out.println(count);
 
+
+        //右移num
+        int count2=0;
+        for (int i = 0; i < 32; i++) {
+            if(((num>>i)&1)==1){
+                count2++;
+            }
+        }
+        System.out.println(count2);
+
+
+
+        //解法3---减法
+        int count3=0;
+        while (num!=0){
+            num=(num-1)&num;
+            count3++;
+        }
+        System.out.println(count3);
+
+
     }
 }
