@@ -9,7 +9,7 @@ import java.util.Random;
 public class findRecurNum {
     public static void main(String[] args) {
         //1.创建一个这样的数组
-        int N=11;
+        int N=1001;
         int[] arr=new int[N];
         for (int i = 0; i < arr.length-1; i++) {
             arr[i]=i+1;
@@ -24,7 +24,7 @@ public class findRecurNum {
         System.out.println("============================");
         //方法1 用位运算找出重复的
         int x1 = 0;
-        for (int i = 1; i <= N; i++) {  // 注意这里是 <= N，而不是 < N-1
+        for (int i = 1; i <= N-1; i++) {  // 注意这里是 <= N，而不是 < N-1
             x1 = (x1 ^ i);
         }
         for (int i = 0; i < arr.length; i++) {
