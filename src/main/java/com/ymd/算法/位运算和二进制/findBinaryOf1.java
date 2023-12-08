@@ -1,4 +1,4 @@
-package com.ymd.算法;
+package com.ymd.算法.位运算和二进制;
 //找出二进制中1的个数
 public class findBinaryOf1 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.ymd.算法;
+package com.ymd.算法.位运算和二进制;
 //判断整数是不是2的整数次方
 public class judgeIntegerOf2 {
     public static void main(String[] args) {
