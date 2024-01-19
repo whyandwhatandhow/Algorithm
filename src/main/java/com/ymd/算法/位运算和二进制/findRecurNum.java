@@ -22,6 +22,8 @@ public class findRecurNum {
         }
         System.out.println();
         System.out.println("============================");
+
+
         //方法1 用位运算找出重复的
         int x1 = 0;
         for (int i = 1; i <= N-1; i++) {  // 注意这里是 <= N，而不是 < N-1

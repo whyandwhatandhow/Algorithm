@@ -5,6 +5,8 @@ public class change0And1 {
         int num1=9;
         int num2=change(num1);
         System.out.println(num2);
+        System.out.println(Integer.toBinaryString(0xaaaaaaaa));
+        System.out.println(Integer.toBinaryString(0x55555555));
     }
 
     public static int change(int num){

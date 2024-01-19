@@ -9,7 +9,7 @@ public class findBinaryOf1 {
 //        int 最多是32位
         int count=0;
         for (int i = 0; i < 32; i++) {
-            if((num&(1<<i))==(1<<i)) {
+            if((num&(1<<i))==(1<<i)) {  //表示000001 左移i位数
                 count++;
             }
         }
