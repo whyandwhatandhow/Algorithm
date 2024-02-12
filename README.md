@@ -61,3 +61,51 @@ java
 Copy code
 int num = -16;
 int result = num >>> 2;  // 结果是 1073741820
+
+
+第一周欠下的：
+https://www.lanqiao.cn/problems/1461/learning/
+https://www.lanqiao.cn/problems/2107/learning/  _1
+https://leetcode.cn/leetbook/read/top-interview-questions-easy/xnhhkv/
+https://leetcode.cn/leetbook/read/top-interview-questions-easy/x2f9gg/
+
+
+
+查找字符串重复的字符
+一个从前查找，一个从后查找，如果下标相等，说明只出现了一次  使用api
+```
+    public int firstUniqChar(String s) {
+        for (int i = 0; i < s.length(); i++)
+            if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i)))
+                return i;
+        return -1;
+    }
+```
+
+获取前缀：
+```
+public String longestCommonPrefix(String[] strs) {
+String ans = strs[0];
+for (int i = 1; i < strs.length; ++i) {
+while (strs[i].indexOf(ans) != 0)
+ans = ans.substring(0, ans.length() - 1);
+}
+return ans;
+}
+```
+
+
+
+第二周欠下的：
+https://leetcode.cn/leetbook/read/top-interview-questions-easy/xnoilh/
+https://leetcode.cn/leetbook/read/top-interview-questions-easy/xnpvdm/
+https://www.lanqiao.cn/problems/287/learning/
+https://www.lanqiao.cn/problems/523/learning/
+
+
+
+
+
+
+第三周欠下的：
+https://www.lanqiao.cn/problems/3497/learning/ --DFS（困难）

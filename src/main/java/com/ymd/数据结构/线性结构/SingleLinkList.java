@@ -53,7 +53,7 @@ public class SingleLinkList implements MyList{
             sb.append(p.data).append("->");
             p=p.next;
         }
-        sb.append("null]");
+        sb.append("null");
         return sb.toString();
     }
 }
