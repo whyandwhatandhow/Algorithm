@@ -109,3 +109,55 @@ https://www.lanqiao.cn/problems/523/learning/
 
 第三周欠下的：
 https://www.lanqiao.cn/problems/3497/learning/ --DFS（困难）
+
+
+一个自动排序的队列
+`PriorityQueue<Integer> pq=new PriorityQueue<>();`
+
+队列实现循环加指针：` que.offer(que.poll())`
+
+
+HashMap和HashSet
+
+HashMap
+```` 
+ public static int majorityElement(int[] nums) {
+        HashMap<Integer,Integer> map=new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if(!map.containsKey(nums[i])){
+                map.put(nums[i],1);
+            }else {
+                map.put(nums[i],map.get(nums[i])+1);
+            }
+        }
+
+        Map.Entry<Integer,Integer> max= null;
+        for (Map.Entry<Integer,Integer> m:map.entrySet()){
+            if(max==null){
+                max=m;
+            }
+            if(m.getValue()>max.getValue()){
+                max=m;
+            }
+        }
+
+        return max.getKey();
+    }
+```` 
+Map.Entry是一个键值对
+
+记录相同字符有多少个
+`
+HashMap<Character,Integer>map=new HashMap<>();
+    for (int i = 0; i < t.length(); i++) {
+        map.put(s.charAt(i), map.getOrDefault(s.charAt(i),0)+1);
+    }
+`
+减去每个字符出现的次数
+` 
+HashMap<Character,Integer>map=new HashMap<>();
+    for (int i = 0; i < t.length(); i++) {
+        map.put(s.charAt(i), map.getOrDefault(s.charAt(i),0)+1);
+    }
+`
