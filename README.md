@@ -156,8 +156,77 @@ HashMap<Character,Integer>map=new HashMap<>();
 `
 减去每个字符出现的次数
 ` 
-HashMap<Character,Integer>map=new HashMap<>();
+    HashMap<Character,Integer>map=new HashMap<>();
     for (int i = 0; i < t.length(); i++) {
         map.put(s.charAt(i), map.getOrDefault(s.charAt(i),0)+1);
     }
 `
+
+
+Set的值复制奇奇怪怪
+`
+Set<Integer> set = new HashSet<>(arrayList);
+
+        int a[]=new int[set.size()];
+
+        for (int i = 0; i < a.length; i++) {
+            a[i]=set.toArray(new Integer[0])[i];
+        }
+`
+
+` s=s.trim();`删除两端空格
+
+将String s 用空格隔开的存入数组，返回
+`String[] cnt=s.split(" ");
+cnt[cnt.length-1].length();`
+
+
+大数表示
+```
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        Stack<Integer> stack = new Stack<>();
+        BigInteger numa = BigInteger.ZERO;
+        BigInteger numb = BigInteger.valueOf(0);
+        BigInteger sum;
+        ListNode p = l1;
+        ListNode q = l2;
+        while (p != null) {
+            stack.push(p.val);
+            p = p.next;
+        }
+
+        while (!stack.isEmpty()) {
+            numa = numa.multiply(BigInteger.TEN);
+            numa = numa.add(BigInteger.valueOf(stack.pop()));
+        }
+
+
+        while (q != null) {
+            stack.push(q.val);
+            q = q.next;
+        }
+
+        while (!stack.isEmpty()) {
+            numb = numb.multiply(BigInteger.TEN);
+            numb = numb.add(BigInteger.valueOf(stack.pop()));
+        }
+
+        sum = numa.add(numb);
+
+        ListNode head = new ListNode(-1);
+        ListNode pre = head;
+        if (sum.equals(BigInteger.ZERO)) {
+            return new ListNode(0);
+        }
+        while (!sum.equals(BigInteger.ZERO)) {
+            ListNode newNode = new ListNode(sum.mod(BigInteger.TEN).intValue());
+            sum = sum.divide(BigInteger.TEN);
+            pre.next = newNode;
+            pre = newNode;
+        }
+
+
+        return head.next;
+    }
+
+```
