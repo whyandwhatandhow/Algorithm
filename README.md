@@ -230,3 +230,52 @@ cnt[cnt.length-1].length();`
     }
 
 ```
+
+
+二叉树定义以及递归遍历
+```
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode() {
+        }
+        TreeNode(int val) {
+            this.val = val;
+        }
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+
+    public static List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> list=new ArrayList<>();
+        searchTree(root,list);
+        return list;
+
+    }
+
+    public static void searchTree(TreeNode root,List<Integer> list){
+        if(root!=null){
+            list.add(root.val);
+            searchTree(root.left,list);
+            searchTree(root.right,list);
+        }
+    }
+
+```
+
+可以用来统计数量，长度
+```
+    public int countNodes(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left=countNodes(root.left);
+        int right=countNodes(root.right);
+        return left+right+1;
+    }
+```
