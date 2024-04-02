@@ -1,12 +1,13 @@
 package com.ymd.数据结构.树;
 
 import com.ymd.Main;
+import com.ymd.Test;
 
 public class 最深叶子之和 {
     public static class TreeNode {
         int val;
-        Main.TreeNode left;
-        Main.TreeNode right;
+        Test.TreeNode left;
+        Test.TreeNode right;
 
         TreeNode() {
         }
@@ -15,7 +16,7 @@ public class 最深叶子之和 {
             this.val = val;
         }
 
-        TreeNode(int val, Main.TreeNode left, Main.TreeNode right) {
+        TreeNode(int val, Test.TreeNode left, Test.TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
@@ -23,12 +24,12 @@ public class 最深叶子之和 {
     }
     int sum=0;
     int maxL=0;
-    public int deepestLeavesSum(Main.TreeNode root) {
+    public int deepestLeavesSum(Test.TreeNode root) {
         dfs(root,0);
         return sum;
     }
 
-    public void dfs(Main.TreeNode root, int level){
+    public void dfs(Test.TreeNode root, int level){
         if(root==null)
             return;
 
